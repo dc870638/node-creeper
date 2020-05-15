@@ -22,10 +22,10 @@ function fsRead(path){
         })
     })
 }
-let w1 = fsRead('./fs/hello.txt')
-w1.then((res) => {
-    // console.log(res)
-})
+// let w1 = fsRead('./fs/hello.txt')
+// w1.then((res) => {
+//     // console.log(res)
+// })
 
 async function readList(){
     var file2 = await fsRead('./fs/hello.txt')
