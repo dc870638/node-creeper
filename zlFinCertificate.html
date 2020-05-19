@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height:100%;overflow:auto;margin: 0 auto;
+            width: 75%;
+        }
+        h2{
+            text-align: center;
+        }
+        .dstart{
+            /* margin-left: 50px; */
+        }
+        /* .account_certify{
+            
+            letter-spacing: 1px;
+            font-weight: 400;
+            line-height: 40px;
+            padding-top: 50px;
+            padding-left: 10%;
+            padding-right: 10%;
+        } */
+        .myNameCode{
+            text-decoration:underline;
+        }
+        .d-td{
+            margin:0 auto;
+            border-collapse: collapse; 
+        }
+        
+        .bot1{
+            float: right;
+            margin-right: 20px;
+            text-align: right;
+        }
+        .dsat{
+            display: inline-block;
+            margin-top:40px;
+        }
+        p{
+            text-indent: 40px;
+            letter-spacing: 2px !important;
+            font-family: STSong !important;
+            font-weight: 300;
+            line-height: 40px;
+            word-wrap: break-word;
+            font-size: 18px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class='account_certify'>   
+        <h2>资产证明书</h2>
+        <p>
+            <span class='dstart'>兹证明:</span>
+            <span class="myNameCode" th:text="${clientName}">刘户口</span>,证件号码:<span class="myNameCode" th:text="${idNo}">1234567</span>
+            <span>为互联网金融平台（APP“金汇金融”及网站https://www.jinhui365.com）的实名注册客户，截止</span><span th:text="${nowTime}">2020年5月19日11:00:00</span>，该客户在证联支付账户实时余额为¥
+            <span class="myNameCode" th:text="${balance}">864.00</span>元（大写：<span th:text="${balanceInWords}">捌佰陆拾肆圆整</span>元）。<br>
+            <span class='dstart dsat'>说明：</span><br>
+            <span class='dstart'>本公司</span>本公司承诺上述证明真实、准确。本证明仅用于体现客户证明开具时其本人（单位）在金汇平台账户所对应证联支付客户备付金账户的实时记账情况，该余额不同于客户本人（单位）在银行的存款，不受《存款保险条例》保护，不得设定质押、不得为他人提供担保，不能作为兑付金融产品的凭证。<br>
+            <p class='dstart'>特此证明。</p>
+        </p>
+        <p class='bot1'>证联支付有限责任公司<br><span th:text="${today}">2020年5月19日</span></p>
+    </div>
+    
+</body>
+</html>

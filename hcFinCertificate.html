@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>投资认证</title>
+    <style>
+        html {
+            /*background: #e3e3e3;*/
+        }
+
+        body {
+            margin: 20px auto;
+            width: 75%;
+            /*background: #fff;*/
+            padding: 20px 40px;
+        }
+
+        p {
+            text-indent: 40px;
+            letter-spacing: 2px;
+            font-family: STSong;
+            font-weight: 300;
+            line-height: 40px;
+            word-wrap: break-word;
+            font-size: 18px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+        thead{
+            display: table-row-group;
+        }
+        thead td {
+            font-weight: 500;
+        }
+        tr{
+            page-break-before: always;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+        td {
+            text-align: center;
+            padding: 15px 5px;
+            max-height: 80px;
+            min-height: 50px;
+            max-width: 160px;
+            min-width: 120px;
+            font-weight: 300;
+        }
+
+        .foot {
+            margin-top: 60px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>华创证券财富管理平台</h2>
+    <h2>投资者认购金融产品证明书</h2>
+    <p>兹证明<span th:text="${clientName}">XXX先生/女士/贵单位</span>，证件号码【<span th:text="${idNo}">000000000000000000</span>】，为我司运营管理的财富管理平台实名注册客户，截止<span th:text="${nowTime}">2019年0X月XX日XX:00</span>，该客户通过我司平台认购的金融产品余额为¥<span th:text="${totalAmount}">XX,XXX.XX</span>元，（大写：<span th:text="${totalAmountInWords}">X拾万X千X佰X拾X元X角X分</span>）。
+    </p>
+    <p>资产明细如下：</p>
+    <table>
+        <thead>
+            <td>产品名称</td>
+            <td>认购本金（元）
+            </td>
+            <td>预期收益（元）</td>
+            <td>产品性质</td>
+        </thead>
+        <tr th:each="item : ${finCertificateItems}">
+            <td th:text="${item.productName}">银华货币A</td>
+            <td th:text="${item.totalAmount}">119.82</td>
+            <td th:text="${item.incomeBalance}">0.00</td>
+            <td th:text="${item.productFeature}">货币基金</td>
+        </tr>
+    </table>
+    <p>说明:</p>
+    <p>1、本证明书为正本，涂改、复印无效。</p>
+    <p>2、本证明书仅作为客户在证明开具时其在平台认购的金融产品余额，不得质押、不得为他人担保，不能作为兑付上述金融产品的凭证。</p>
+    <div class='foot'>
+        <p>华创证券有限责任公司</p>
+        <p th:text="${today}">2019年XX月XX日</p>
+    </div>
+</body>
+
+</html>
