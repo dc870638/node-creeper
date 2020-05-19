@@ -1,19 +1,19 @@
 const fs = require('fs')
 
-let wfs = fs.writeFile('./text.txt','what do you want to eat',(err) => {
-    if(err)
-    {console.log(err)}
-    console.log('文件已写入')
-})
+// let wfs = fs.writeFile('./text.txt','what do you want to eat',(err) => {
+//     if(err)
+//     {console.log(err)}
+//     console.log('文件已写入')
+// })
 
 function fsWrite(path,content){
     return new Promise((resolve,reject) => {
-        fs.writeFile(path,content,{flag:'a',encoding:'utf-8'},(err) => {
+        fs.writeFile(path,content,{flag:'w',encoding:'utf-8'},(err) => {
             if(err){
                 reject(err)
             }
             else{
-                resolve('写入成功')
+                resolve()
             }
         })
     })
@@ -29,3 +29,5 @@ async function writeList(){
 }
 
 writeList()
+
+module.exports = {fsWrite}

@@ -1,0 +1,22 @@
+
+    {
+        "name": "xxx",
+        "version": "1.0.0",
+        "description": "x",
+        "main": "x",
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/dc870638/node-creeper.git"
+        },
+        "author": "x",
+        "license": "ISC",
+        "bugs": {
+          "url": "https://github.com/dc870638/node-creeper/issues"
+        },
+        "homepage": "https://github.com/dc870638/node-creeper#readme"
+      }
+      
+    
